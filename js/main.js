@@ -1,5 +1,5 @@
 // Configuración del repo — cambiar aquí si el repo se mueve.
-const REPO_OWNER  = "carlosplaybypoint";
+const REPO_OWNER  = "unimauro";
 const REPO_NAME   = "unimaurox-separaciones-denuncias";
 const REPO_BRANCH = "main";
 const REPO_URL    = `https://github.com/${REPO_OWNER}/${REPO_NAME}`;
