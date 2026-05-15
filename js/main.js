@@ -35,7 +35,8 @@ async function cargarDatos() {
     "data/suicidios_sexo_latam.json",
     "data/peru_temporal.json",
     "data/marco_legal.json",
-    "data/sources.json"
+    "data/sources.json",
+    "data/violencia_separacion_comparado.json"
   ];
   const resp = await Promise.all(archivos.map(a => fetch(a).then(r => r.json())));
   return {
@@ -45,7 +46,8 @@ async function cargarDatos() {
     suicidios:    resp[3],
     peruTemporal: resp[4],
     marcoLegal:   resp[5],
-    fuentes:      resp[6]
+    fuentes:      resp[6],
+    separacion:   resp[7]
   };
 }
 
@@ -85,6 +87,104 @@ function renderPanelPeru(data) {
   renderSerieTemporal("chart-feminicidios-pe", serieFemPe.serie,     "Feminicidios",           COLORS.morado);
   renderSerieTemporal("chart-divorcios-pe",    serieDivPe.serie,     "Divorcios inscritos",    COLORS.naranja);
   renderSerieTemporal("chart-archivamientos",  serieArch.serie,      "% archivado",            COLORS.gris);
+}
+
+// Render del panel "Violencia en separación".
+function renderPanelSeparacion(data) {
+  const sep = data.separacion;
+
+  // Chart 1: % de denuncias en contexto de separación
+  const ctxPct = document.getElementById("chart-separacion-pct");
+  if (ctxPct) {
+    const paises = sep.denuncias_contexto_separacion.paises;
+    const ordenado = [...paises].sort((a, b) => b.porcentaje - a.porcentaje);
+    new Chart(ctxPct, {
+      type: "bar",
+      data: {
+        labels: ordenado.map(p => p.pais),
+        datasets: [{
+          label: "% víctimas no convivientes",
+          data: ordenado.map(p => p.porcentaje),
+          backgroundColor: COLORS.rojo
+        }]
+      },
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: c => `${c.parsed.x}% (${ordenado[c.dataIndex].anio})`,
+              afterLabel: c => ordenado[c.dataIndex].nota
+            }
+          }
+        },
+        scales: { x: { beginAtZero: true, max: 100, ticks: { callback: v => v + "%" } } }
+      }
+    });
+  }
+
+  // Chart 2: Distribución por tipo en Argentina
+  const ctxArg = document.getElementById("chart-tipos-argentina");
+  if (ctxArg) {
+    const valores = sep.distribucion_argentina_detalle.valores;
+    const ordenado = [...valores].sort((a, b) => b.porcentaje - a.porcentaje);
+    new Chart(ctxArg, {
+      type: "bar",
+      data: {
+        labels: ordenado.map(v => v.tipo),
+        datasets: [{
+          label: "% de casos",
+          data: ordenado.map(v => v.porcentaje),
+          backgroundColor: COLORS.morado
+        }]
+      },
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: { x: { beginAtZero: true, max: 100, ticks: { callback: v => v + "%" } } }
+      }
+    });
+  }
+
+  // Tabla: tipos tipificados por país
+  const tbodyTipos = document.querySelector("#tabla-tipos tbody");
+  if (tbodyTipos) {
+    tbodyTipos.innerHTML = "";
+    for (const fila of sep.tipos_violencia_tipificados.matriz) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td><strong>${fila.tipo}</strong></td>
+        <td>${fila.espana}</td>
+        <td>${fila.usa}</td>
+        <td>${fila.argentina}</td>
+        <td>${fila.brasil}</td>
+        <td class="small text-muted">${fila.notas}</td>
+      `;
+      tbodyTipos.appendChild(tr);
+    }
+  }
+
+  // Tabla: denuncias falsas oficiales
+  const tbodyFalsas = document.querySelector("#tabla-falsas tbody");
+  if (tbodyFalsas) {
+    tbodyFalsas.innerHTML = "";
+    for (const p of sep.denuncias_falsas_oficiales.paises) {
+      const pct = p.porcentaje_estimado === null ? "Sin cifra oficial" : `~${p.porcentaje_estimado}%`;
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td><strong>${p.pais}</strong></td>
+        <td>${p.fuente}</td>
+        <td>${pct}</td>
+        <td class="small">${p.descripcion}</td>
+      `;
+      tbodyFalsas.appendChild(tr);
+    }
+  }
 }
 
 // Render de la tabla de marco legal.
@@ -135,6 +235,7 @@ function renderFuentes(data) {
     const data = await cargarDatos();
     renderPanelRegional(data);
     renderPanelPeru(data);
+    renderPanelSeparacion(data);
     renderTablaLegal(data);
     renderFuentes(data);
   } catch (err) {

@@ -33,6 +33,9 @@
       <button class="nav-link" id="tab-peru" data-bs-toggle="tab" data-bs-target="#panel-peru" type="button">Perú en detalle</button>
     </li>
     <li class="nav-item" role="presentation">
+      <button class="nav-link" id="tab-separacion" data-bs-toggle="tab" data-bs-target="#panel-separacion" type="button">Violencia en separación</button>
+    </li>
+    <li class="nav-item" role="presentation">
       <button class="nav-link" id="tab-legal" data-bs-toggle="tab" data-bs-target="#panel-legal" type="button">Marco legal comparado</button>
     </li>
     <li class="nav-item" role="presentation">
@@ -145,6 +148,90 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- PANEL VIOLENCIA EN SEPARACIÓN -->
+    <div class="tab-pane fade" id="panel-separacion" role="tabpanel">
+
+      <div class="alert alert-info small mb-4">
+        <strong>Sobre esta pestaña.</strong> Comparativo entre <strong>España</strong>, <strong>USA</strong>, <strong>Argentina</strong> y <strong>Brasil</strong> sobre violencia contra la pareja/expareja durante o después de la separación. España (CGPJ) y Argentina (OVD-CABA) son los que mejor desagregan el contexto de no-convivencia. Las definiciones legales de cada tipo de violencia difieren — la matriz inferior lo aclara.
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title">% de denuncias en contexto de separación</h5>
+              <p class="text-muted small mb-1">Víctima ya no convivía con el agresor (expareja, excónyuge, separados de hecho). Aproximado — definiciones difieren entre países.</p>
+              <canvas id="chart-separacion-pct"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <h5 class="card-title">Distribución por tipo de violencia — Argentina (RUCVM 2022)</h5>
+              <p class="text-muted small mb-1">Una víctima puede reportar varios tipos; los porcentajes no suman 100%. Argentina es de los pocos países que registra económica y simbólica de forma sistemática.</p>
+              <canvas id="chart-tipos-argentina"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Qué tipo de violencia registra cada país</h5>
+              <p class="text-muted small">"Sí" no implica que la captura sea de igual calidad. Argentina y Brasil tienen marcos más amplios; España y USA capturan algunos tipos solo en encuestas, no en registros judiciales.</p>
+              <div class="table-responsive">
+                <table class="table table-sm table-bordered" id="tabla-tipos">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>Tipo</th>
+                      <th>España</th>
+                      <th>USA</th>
+                      <th>Argentina</th>
+                      <th>Brasil</th>
+                      <th>Notas</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Denuncias judicialmente probadas como falsas</h5>
+              <p class="text-muted small">Cifra que más se distorsiona en debates. <strong>Importante</strong>: archivamiento por falta de pruebas NO equivale a denuncia falsa probada.</p>
+              <div class="table-responsive">
+                <table class="table table-sm table-bordered" id="tabla-falsas">
+                  <thead class="table-dark">
+                    <tr><th>País</th><th>Fuente</th><th>%</th><th>Detalle</th></tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="alert alert-warning small mb-0">
+            <strong>Limitaciones para tomar con seriedad.</strong>
+            <ul class="mb-0 mt-2">
+              <li>Cada país define los tipos de violencia con leyes distintas (LO 1/2004 España; Ley 26.485 Argentina; Lei Maria da Penha + Lei 14.188/21 Brasil; legislación estatal en USA). Una "denuncia por psicológica" en Argentina puede no existir como categoría registral en USA.</li>
+              <li>El % de denuncias en contexto de separación se calcula con denominadores distintos según el país (denuncias judiciales en España, casos registrados en Argentina, lesiones penales en Brasil, encuesta en USA).</li>
+              <li>USA: el NCVS subregistra violencia sexual; el NISVS captura los 4 tipos pero se publica con varios años de lag.</li>
+              <li>Brasil: la calidad del dato depende de cada estado (SSPs); el FBSP consolida lo mejor disponible.</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
 

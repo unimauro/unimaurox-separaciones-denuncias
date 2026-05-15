@@ -1,0 +1,147 @@
+{
+  "indicador": "Violencia contra la pareja/expareja — datos comparados entre 4 países",
+  "advertencia_comparabilidad": "La comparación directa entre países requiere cautela. Cada país define y captura los tipos de violencia de forma distinta (LO 1/2004 en España; Ley 26.485 en Argentina; Lei Maria da Penha 11.340 y 14.188/21 en Brasil; NISVS/NCVS en USA). Los porcentajes intra-país no siempre suman 100% porque una misma víctima puede reportar múltiples tipos.",
+  "fuentes_pais": {
+    "espana": {
+      "fuente": "CGPJ — Observatorio contra la Violencia Doméstica y de Género",
+      "url": "https://www.poderjudicial.es/cgpj/es/Temas/Estadistica-Judicial/Estadistica-por-temas/Datos-penales--civiles-y-laborales/Violencia-domestica-y-Violencia-de-genero/",
+      "frecuencia": "Trimestral",
+      "complemento": "INE — Estadística de Violencia Doméstica y de Género; Macroencuesta 2019"
+    },
+    "usa": {
+      "fuente_registro": "BJS — National Crime Victimization Survey (NCVS)",
+      "url_registro": "https://bjs.ojp.gov/data-collection/ncvs",
+      "fuente_encuesta": "CDC — National Intimate Partner and Sexual Violence Survey (NISVS)",
+      "url_encuesta": "https://www.cdc.gov/violenceprevention/datasources/nisvs/",
+      "frecuencia": "NCVS anual; NISVS irregular"
+    },
+    "argentina": {
+      "fuente_nacional": "INDEC — Registro Único de Casos de Violencia contra las Mujeres (RUCVM)",
+      "url_nacional": "https://www.indec.gob.ar/indec/web/Nivel4-Tema-2-21-129",
+      "fuente_granular": "Corte Suprema de Justicia — Oficina de Violencia Doméstica (OVD), solo CABA",
+      "url_granular": "https://www.csjn.gov.ar/om/ovd_estadisticas.html",
+      "frecuencia": "RUCVM anual; OVD trimestral y anual"
+    },
+    "brasil": {
+      "fuente": "Fórum Brasileiro de Segurança Pública — Anuário Brasileiro de Segurança Pública",
+      "url": "https://forumseguranca.org.br/anuario-brasileiro-seguranca-publica/",
+      "complemento": "Atlas da Violência (IPEA + FBSP); Ligue 180 (Ministério das Mulheres)",
+      "frecuencia": "Anual"
+    }
+  },
+  "denuncias_contexto_separacion": {
+    "descripcion": "Porcentaje de denuncias por violencia de pareja donde la víctima ya NO convivía con el agresor al momento del hecho (expareja, excónyuge, separados de hecho).",
+    "advertencia": "Las definiciones de 'no convivencia' difieren entre países. Tomar como orden de magnitud, no comparación exacta.",
+    "paises": [
+      { "pais": "España",   "codigo": "ESP", "porcentaje": 39, "anio": 2023, "nota": "CGPJ: denuncias VG donde el agresor es expareja sobre el total de denuncias por VG." },
+      { "pais": "Argentina","codigo": "ARG", "porcentaje": 40, "anio": 2023, "nota": "OVD-CABA: denunciantes que ya no convivían con el agresor." },
+      { "pais": "Brasil",   "codigo": "BRA", "porcentaje": 35, "anio": 2023, "nota": "FBSP/Ligue 180: violencia por expareja sobre violencia por pareja/expareja. Aproximado." },
+      { "pais": "USA",      "codigo": "USA", "porcentaje": 45, "anio": 2022, "nota": "NCVS/NISVS: IPV cometida por former intimate partner sobre total IPV. Aproximado." }
+    ]
+  },
+  "denuncias_anuales_totales": {
+    "descripcion": "Magnitud total anual de denuncias o casos registrados en el sistema oficial.",
+    "advertencia": "No directamente comparable — España captura denuncias judiciales formales; Brasil captura lesão corporal Lei Maria da Penha; Argentina RUCVM captura casos registrados por instituciones; USA NCVS es estimación por encuesta.",
+    "paises": [
+      { "pais": "España",   "codigo": "ESP", "denuncias": 199282, "anio": 2023, "tipo": "Denuncias por VG ingresadas a juzgados (CGPJ)" },
+      { "pais": "Argentina","codigo": "ARG", "denuncias":  85000, "anio": 2022, "tipo": "Casos RUCVM (aproximado por cobertura desigual)" },
+      { "pais": "Brasil",   "codigo": "BRA", "denuncias": 258941, "anio": 2023, "tipo": "Lesão corporal dolosa Lei Maria da Penha (FBSP)" },
+      { "pais": "USA",      "codigo": "USA", "denuncias": 980000, "anio": 2022, "tipo": "Estimación IPV NCVS (3.9 por 1,000 personas 12+)" }
+    ]
+  },
+  "tipos_violencia_tipificados": {
+    "descripcion": "Qué tipos de violencia tipifica/registra cada sistema oficial.",
+    "matriz": [
+      {
+        "tipo": "Física",
+        "espana": "Sí",
+        "usa": "Sí",
+        "argentina": "Sí",
+        "brasil": "Sí",
+        "notas": "Universalmente capturada; suele ser la más reportada."
+      },
+      {
+        "tipo": "Psicológica",
+        "espana": "Sí — LO 1/2004 Art. 1.3",
+        "usa": "Sí (NISVS) — registros judiciales parcial",
+        "argentina": "Sí — Ley 26.485, es la más prevalente (~84% casos)",
+        "brasil": "Sí — Lei 14.188/2021 tipificó perseguição/violência psicológica",
+        "notas": "Argentina y Brasil la capturan robustamente; España la cubre legalmente pero el registro práctico es más débil; USA solo en encuesta NISVS, no en NCVS."
+      },
+      {
+        "tipo": "Sexual",
+        "espana": "Sí",
+        "usa": "Sí — sub-registrada en NCVS",
+        "argentina": "Sí",
+        "brasil": "Sí",
+        "notas": "Universalmente tipificada; subregistro alto en todos los países."
+      },
+      {
+        "tipo": "Económica / patrimonial",
+        "espana": "Parcial — macroencuesta INE, no registro judicial sistemático",
+        "usa": "Parcial — solo NISVS (coerción económica)",
+        "argentina": "Sí — Ley 26.485 explícita (~29% casos)",
+        "brasil": "Sí — Lei Maria da Penha explícita",
+        "notas": "Argentina y Brasil la incorporan formalmente al registro; España y USA solo a nivel de encuesta."
+      },
+      {
+        "tipo": "Simbólica",
+        "espana": "No",
+        "usa": "No",
+        "argentina": "Sí — Ley 26.485 la tipifica",
+        "brasil": "No formalmente, parcial via 'violência moral'",
+        "notas": "Tipificación más amplia en Argentina."
+      },
+      {
+        "tipo": "Vicaria (hacia hijos para dañar a la madre)",
+        "espana": "Sí — reconocida desde 2021",
+        "usa": "Parcial",
+        "argentina": "Reconocida en algunas provincias",
+        "brasil": "No formalmente",
+        "notas": "España es pionera en reconocer este tipo legalmente."
+      }
+    ]
+  },
+  "distribucion_argentina_detalle": {
+    "descripcion": "RUCVM Argentina 2022 — porcentaje de casos por tipo de violencia (los porcentajes pueden sumar más de 100% porque una víctima puede reportar varios tipos).",
+    "fuente": "INDEC RUCVM",
+    "valores": [
+      { "tipo": "Psicológica",        "porcentaje": 84 },
+      { "tipo": "Física",             "porcentaje": 53 },
+      { "tipo": "Económica/patrimonial", "porcentaje": 29 },
+      { "tipo": "Simbólica",          "porcentaje": 25 },
+      { "tipo": "Sexual",             "porcentaje":  8 }
+    ]
+  },
+  "denuncias_falsas_oficiales": {
+    "descripcion": "Datos sobre denuncias judicialmente declaradas falsas o desestimadas por inexistencia del hecho (no por falta de pruebas).",
+    "advertencia": "Esta cifra es la que más se distorsiona en el debate público. Archivamiento por falta de pruebas NO equivale a denuncia falsa.",
+    "paises": [
+      {
+        "pais": "España",
+        "fuente": "Fiscalía General del Estado — Memoria anual",
+        "porcentaje_estimado": 0.01,
+        "descripcion": "Aproximadamente 0,01% de las denuncias por VG terminan con condena por denuncia falsa (Art. 456 CP español). Dato consistente en memorias de la Fiscalía 2009-2023.",
+        "anio": 2023
+      },
+      {
+        "pais": "Argentina",
+        "fuente": "OVD-CABA + estudios académicos",
+        "porcentaje_estimado": null,
+        "descripcion": "Sin cifra oficial nacional. Estudios sobre OVD-CABA reportan denuncias con sentencia por falsa denuncia en orden de fracción del 1%."
+      },
+      {
+        "pais": "USA",
+        "fuente": "Estudios académicos (Lonsway, Lisak)",
+        "porcentaje_estimado": 5,
+        "descripcion": "Para denuncias de violación, estudios convergentes (NIJ, IACP) sitúan la tasa de denuncia falsa probada entre 2-10%. No hay registro federal específico para IPV en general."
+      },
+      {
+        "pais": "Brasil",
+        "fuente": "Sem registro oficial sistematizado",
+        "porcentaje_estimado": null,
+        "descripcion": "Pesquisas pontuais; tipificação penal existe (Art. 339 CP) pero no se publica estadística agregada."
+      }
+    ]
+  }
+}
