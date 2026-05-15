@@ -1,0 +1,54 @@
+{
+  "indicadores": {
+    "feminicidios": {
+      "fuente_primaria": "CEPAL — Observatorio de Igualdad de Género de América Latina y el Caribe",
+      "url": "https://oig.cepal.org/es/indicadores/feminicidio",
+      "definicion": "Muertes de mujeres ocasionadas por su pareja o ex pareja íntima, según definición homologada por CEPAL. Tasa por 100,000 mujeres.",
+      "advertencias": "No todos los países contabilizan igual — algunos usan feminicidio íntimo, otros femicidio amplio. CEPAL homologa cuando es posible.",
+      "ultima_actualizacion_fuente": "Verificar en cepal.org/oig"
+    },
+    "homicidios_hombres": {
+      "fuente_primaria": "UNODC — Global Study on Homicide",
+      "url": "https://dataunodc.un.org/dp-intentional-homicide-victims",
+      "definicion": "Tasa de homicidio intencional por 100,000 habitantes, víctimas de sexo masculino.",
+      "advertencias": "Comparar entre países requiere considerar tasa de esclarecimiento y registro.",
+      "ultima_actualizacion_fuente": "Verificar en dataunodc.un.org"
+    },
+    "divorcios": {
+      "fuente_primaria": "División de Estadística de Naciones Unidas + institutos nacionales",
+      "url": "https://unstats.un.org/unsd/demographic-social/products/dyb/",
+      "definicion": "Divorcios registrados por 1,000 habitantes (tasa cruda). No incluye separaciones de hecho.",
+      "advertencias": "Países con divorcio notarial reciente muestran saltos artificiales (ej. Chile post-2004, Perú post-2008).",
+      "ultima_actualizacion_fuente": "Verificar UN Demographic Yearbook más reciente"
+    },
+    "suicidios": {
+      "fuente_primaria": "OMS — Global Health Observatory",
+      "url": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/suicide-mortality-rate-(per-100-000-population)",
+      "definicion": "Tasa de mortalidad por suicidio por 100,000 habitantes, ajustada por edad. Desagregada por sexo.",
+      "advertencias": "Sub-registro persistente, especialmente en hombres jóvenes y zonas rurales.",
+      "ultima_actualizacion_fuente": "Verificar GHO de la OMS"
+    },
+    "peru_denuncias_30364": {
+      "fuente_primaria": "Ministerio Público — Observatorio de Criminalidad",
+      "url": "https://www.gob.pe/mpfn",
+      "definicion": "Denuncias ingresadas a fiscalías por la Ley 30364 (violencia contra la mujer e integrantes del grupo familiar).",
+      "advertencias": "Aumento en serie puede reflejar mayor denuncia, no necesariamente mayor violencia.",
+      "ultima_actualizacion_fuente": "Boletines anuales del Observatorio del MP"
+    },
+    "peru_inpe_oaf": {
+      "fuente_primaria": "INPE — Informe Estadístico Penitenciario",
+      "url": "https://www.gob.pe/inpe",
+      "definicion": "Población interna privada de libertad por el delito de Omisión a la Asistencia Familiar (Art. 149 del Código Penal).",
+      "advertencias": "Incluye procesados y sentenciados.",
+      "ultima_actualizacion_fuente": "Informe Estadístico mensual del INPE"
+    },
+    "peru_feminicidios": {
+      "fuente_primaria": "MIMP — Programa AURORA y Observatorio del MP",
+      "url": "https://www.gob.pe/mimp",
+      "definicion": "Feminicidios consumados registrados oficialmente.",
+      "advertencias": "Cifras pueden variar entre MIMP y MP por diferencias de tipificación durante la investigación.",
+      "ultima_actualizacion_fuente": "Boletín mensual MIMP"
+    }
+  },
+  "limitaciones_generales": "Los valores cargados son referenciales y deben verificarse contra la fuente más reciente antes de uso en publicación. Editar archivos JSON en /data para actualizar."
+}

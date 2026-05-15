@@ -1,0 +1,25 @@
+{
+  "indicador": "Tasa de mortalidad por suicidio por 100,000 habitantes, por sexo",
+  "fuente": "OMS — Global Health Observatory",
+  "anio_referencia": "2019-2021 (verificar GHO)",
+  "advertencia": "Sub-registro persistente, especialmente en hombres jóvenes y zonas rurales. La brecha hombre/mujer es uno de los mayores diferenciales de mortalidad por sexo en la región.",
+  "paises": [
+    { "pais": "Uruguay",             "codigo": "URY", "tasa_hombres": 32.0, "tasa_mujeres": 7.5, "anio": 2020 },
+    { "pais": "Guyana",              "codigo": "GUY", "tasa_hombres": 40.3, "tasa_mujeres":13.4, "anio": 2019 },
+    { "pais": "Suriname",            "codigo": "SUR", "tasa_hombres": 25.4, "tasa_mujeres":10.2, "anio": 2019 },
+    { "pais": "Bolivia",             "codigo": "BOL", "tasa_hombres": 14.4, "tasa_mujeres": 7.6, "anio": 2019 },
+    { "pais": "Argentina",           "codigo": "ARG", "tasa_hombres": 13.7, "tasa_mujeres": 3.1, "anio": 2020 },
+    { "pais": "Chile",               "codigo": "CHL", "tasa_hombres": 16.5, "tasa_mujeres": 4.0, "anio": 2020 },
+    { "pais": "Ecuador",             "codigo": "ECU", "tasa_hombres": 11.9, "tasa_mujeres": 4.8, "anio": 2020 },
+    { "pais": "Brasil",              "codigo": "BRA", "tasa_hombres":10.4,  "tasa_mujeres": 2.9, "anio": 2020 },
+    { "pais": "Paraguay",            "codigo": "PRY", "tasa_hombres":10.5,  "tasa_mujeres": 4.1, "anio": 2020 },
+    { "pais": "México",              "codigo": "MEX", "tasa_hombres": 9.6,  "tasa_mujeres": 2.5, "anio": 2020 },
+    { "pais": "Costa Rica",          "codigo": "CRI", "tasa_hombres": 9.0,  "tasa_mujeres": 2.0, "anio": 2020 },
+    { "pais": "Colombia",            "codigo": "COL", "tasa_hombres": 7.9,  "tasa_mujeres": 2.0, "anio": 2020 },
+    { "pais": "El Salvador",         "codigo": "SLV", "tasa_hombres": 6.7,  "tasa_mujeres": 2.7, "anio": 2020 },
+    { "pais": "Perú",                "codigo": "PER", "tasa_hombres": 5.2,  "tasa_mujeres": 2.0, "anio": 2020 },
+    { "pais": "Honduras",            "codigo": "HND", "tasa_hombres": 4.5,  "tasa_mujeres": 1.0, "anio": 2020 },
+    { "pais": "República Dominicana","codigo": "DOM", "tasa_hombres": 5.5,  "tasa_mujeres": 1.2, "anio": 2020 },
+    { "pais": "Venezuela",           "codigo": "VEN", "tasa_hombres": 5.2,  "tasa_mujeres": 1.6, "anio": 2019 }
+  ]
+}

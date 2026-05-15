@@ -1,0 +1,23 @@
+{
+  "indicador": "Tasa de divorcios por 1,000 habitantes",
+  "fuente": "UN Demographic Yearbook + institutos nacionales",
+  "anio_referencia": "2021-2022 (verificar UNSD)",
+  "advertencia": "No incluye separaciones de hecho. Países con divorcio notarial reciente (Chile 2004, Perú 2008) muestran cambios artificiales en serie histórica.",
+  "paises": [
+    { "pais": "Costa Rica",          "codigo": "CRI", "tasa": 3.0, "anio": 2022 },
+    { "pais": "Uruguay",             "codigo": "URY", "tasa": 2.5, "anio": 2022 },
+    { "pais": "Cuba",                "codigo": "CUB", "tasa": 2.6, "anio": 2021 },
+    { "pais": "República Dominicana","codigo": "DOM", "tasa": 2.4, "anio": 2022 },
+    { "pais": "Brasil",              "codigo": "BRA", "tasa": 1.7, "anio": 2022 },
+    { "pais": "Chile",               "codigo": "CHL", "tasa": 1.5, "anio": 2022 },
+    { "pais": "Argentina",           "codigo": "ARG", "tasa": 1.0, "anio": 2022 },
+    { "pais": "Honduras",            "codigo": "HND", "tasa": 1.0, "anio": 2021 },
+    { "pais": "Bolivia",             "codigo": "BOL", "tasa": 0.9, "anio": 2021 },
+    { "pais": "El Salvador",         "codigo": "SLV", "tasa": 0.8, "anio": 2022 },
+    { "pais": "Ecuador",             "codigo": "ECU", "tasa": 1.1, "anio": 2022 },
+    { "pais": "Paraguay",            "codigo": "PRY", "tasa": 0.6, "anio": 2021 },
+    { "pais": "México",              "codigo": "MEX", "tasa": 1.2, "anio": 2022 },
+    { "pais": "Colombia",            "codigo": "COL", "tasa": 0.5, "anio": 2022 },
+    { "pais": "Perú",                "codigo": "PER", "tasa": 0.4, "anio": 2022 }
+  ]
+}

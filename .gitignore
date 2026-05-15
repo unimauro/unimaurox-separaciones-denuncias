@@ -1,0 +1,11 @@
+salida/
+vars.env
+*.docx
+*.pdf
+!plantillas/*.md
+
+.DS_Store
+*.bak
+*.tmp
+.vscode/
+.idea/

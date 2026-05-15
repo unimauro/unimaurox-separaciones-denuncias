@@ -1,0 +1,43 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #f8f9fa;
+}
+
+.card {
+  border: none;
+  background: #fff;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.nav-tabs .nav-link {
+  color: #495057;
+}
+.nav-tabs .nav-link.active {
+  font-weight: 600;
+}
+
+canvas {
+  max-height: 360px;
+}
+
+#tabla-legal {
+  font-size: 0.85rem;
+}
+#tabla-legal th {
+  font-size: 0.8rem;
+  vertical-align: middle;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #e9ecef;
+  color: #212529;
+}
+
+footer a {
+  color: #495057;
+}

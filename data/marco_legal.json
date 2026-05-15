@@ -1,0 +1,97 @@
+{
+  "indicador": "Marco legal comparado por país — procesos de violencia familiar y deuda alimentaria",
+  "fuente": "Compilación a partir de legislación vigente publicada en portales oficiales — verificar última actualización",
+  "advertencia": "Tabla referencial. Cada país tiene matices procesales que no caben en una celda; usar como guía de partida.",
+  "paises": [
+    {
+      "pais": "Perú",
+      "ley_violencia": "Ley 30364 (2015)",
+      "medidas_proteccion_sin_contradictorio": "Sí — pueden dictarse inaudita parte en 72 horas",
+      "prision_por_oaf": "Sí — Art. 149 CP, pena privativa",
+      "denuncia_falsa_tipificada": "Sí — Art. 402 CP (denuncia calumniosa)",
+      "tenencia_compartida": "Reconocida por jurisprudencia, no por norma específica",
+      "obstruccion_vinculos": "No tipificada penalmente, valorable en proceso de familia"
+    },
+    {
+      "pais": "Argentina",
+      "ley_violencia": "Ley 26.485 (2009)",
+      "medidas_proteccion_sin_contradictorio": "Sí — Ley 24.417 y 26.485",
+      "prision_por_oaf": "Sí — incumplimiento deberes asistencia familiar, Ley 13.944",
+      "denuncia_falsa_tipificada": "Sí — Art. 245 CP",
+      "tenencia_compartida": "Sí — Código Civil y Comercial 2015 establece cuidado compartido como regla",
+      "obstruccion_vinculos": "Ley 24.270 — impedimento de contacto"
+    },
+    {
+      "pais": "Chile",
+      "ley_violencia": "Ley 20.066 (2005)",
+      "medidas_proteccion_sin_contradictorio": "Sí — medidas cautelares en tribunales de familia",
+      "prision_por_oaf": "Sí — apremios por incumplimiento de pensión (Ley 14.908)",
+      "denuncia_falsa_tipificada": "Sí — Art. 211 CP",
+      "tenencia_compartida": "Sí — Ley 20.680 (2013)",
+      "obstruccion_vinculos": "Valorable, no tipificada autónomamente"
+    },
+    {
+      "pais": "México",
+      "ley_violencia": "Ley General de Acceso a las Mujeres a una Vida Libre de Violencia (2007)",
+      "medidas_proteccion_sin_contradictorio": "Sí — órdenes de protección",
+      "prision_por_oaf": "Sí — varía por estado, Art. 336 CPF y códigos estatales",
+      "denuncia_falsa_tipificada": "Sí — Art. 197 CPF (varía por estado)",
+      "tenencia_compartida": "Reconocida por SCJN, no uniforme en estados",
+      "obstruccion_vinculos": "Tipificada en algunos estados como violencia familiar"
+    },
+    {
+      "pais": "Colombia",
+      "ley_violencia": "Ley 1257 (2008)",
+      "medidas_proteccion_sin_contradictorio": "Sí — comisarías de familia y jueces",
+      "prision_por_oaf": "Sí — Art. 233 CP (inasistencia alimentaria)",
+      "denuncia_falsa_tipificada": "Sí — Art. 435 CP",
+      "tenencia_compartida": "Sí, reconocida",
+      "obstruccion_vinculos": "Ley 1098 (Código Infancia) sanciona"
+    },
+    {
+      "pais": "Brasil",
+      "ley_violencia": "Lei Maria da Penha 11.340 (2006)",
+      "medidas_proteccion_sin_contradictorio": "Sí — medidas protectivas de urgência",
+      "prision_por_oaf": "Sí — prisión civil hasta 90 días por deuda alimentaria",
+      "denuncia_falsa_tipificada": "Sí — Art. 339 CP (denunciação caluniosa)",
+      "tenencia_compartida": "Sí — Lei 11.698 (2008), regra desde 2014",
+      "obstruccion_vinculos": "Lei 12.318 (2010) — alienação parental tipificada"
+    },
+    {
+      "pais": "Ecuador",
+      "ley_violencia": "Ley Orgánica para Prevenir y Erradicar la Violencia contra las Mujeres (2018)",
+      "medidas_proteccion_sin_contradictorio": "Sí",
+      "prision_por_oaf": "Sí — apremio personal por pensiones alimenticias",
+      "denuncia_falsa_tipificada": "Sí — Art. 271 COIP",
+      "tenencia_compartida": "Reconocida, no uniforme",
+      "obstruccion_vinculos": "Código de la Niñez sanciona"
+    },
+    {
+      "pais": "Bolivia",
+      "ley_violencia": "Ley 348 (2013) — Ley Integral para Garantizar a las Mujeres una Vida Libre de Violencia",
+      "medidas_proteccion_sin_contradictorio": "Sí — medidas de protección inmediatas",
+      "prision_por_oaf": "Sí — apremio corporal por asistencia familiar",
+      "denuncia_falsa_tipificada": "Sí — Art. 166 CP",
+      "tenencia_compartida": "Código Niño Niña Adolescente",
+      "obstruccion_vinculos": "Valorable"
+    },
+    {
+      "pais": "Uruguay",
+      "ley_violencia": "Ley 19.580 (2017)",
+      "medidas_proteccion_sin_contradictorio": "Sí — medidas cautelares",
+      "prision_por_oaf": "Sí — Ley 17.514, prisión por desacato",
+      "denuncia_falsa_tipificada": "Sí — Art. 179 CP",
+      "tenencia_compartida": "Reconocida, no uniforme",
+      "obstruccion_vinculos": "Valorable"
+    },
+    {
+      "pais": "Costa Rica",
+      "ley_violencia": "Ley 8589 (2007) — Penalización Violencia contra las Mujeres",
+      "medidas_proteccion_sin_contradictorio": "Sí — Ley 7586",
+      "prision_por_oaf": "Sí — Ley de Pensiones Alimentarias 7654",
+      "denuncia_falsa_tipificada": "Sí — Art. 318 CP",
+      "tenencia_compartida": "Reconocida",
+      "obstruccion_vinculos": "Código Familia"
+    }
+  ]
+}

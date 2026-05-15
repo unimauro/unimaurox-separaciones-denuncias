@@ -1,0 +1,22 @@
+{
+  "indicador": "Tasa de feminicidio por 100,000 mujeres",
+  "fuente": "CEPAL — Observatorio de Igualdad de Género",
+  "anio_referencia": "2022 (verificar más reciente en cepal.org/oig)",
+  "advertencia": "Cifras referenciales para visualización. Verificar antes de citar.",
+  "paises": [
+    { "pais": "Honduras",            "codigo": "HND", "tasa": 6.0, "anio": 2022 },
+    { "pais": "República Dominicana","codigo": "DOM", "tasa": 2.7, "anio": 2022 },
+    { "pais": "El Salvador",         "codigo": "SLV", "tasa": 2.4, "anio": 2022 },
+    { "pais": "Bolivia",             "codigo": "BOL", "tasa": 1.8, "anio": 2022 },
+    { "pais": "Uruguay",             "codigo": "URY", "tasa": 1.5, "anio": 2022 },
+    { "pais": "Paraguay",            "codigo": "PRY", "tasa": 1.5, "anio": 2022 },
+    { "pais": "México",              "codigo": "MEX", "tasa": 1.4, "anio": 2022 },
+    { "pais": "Brasil",              "codigo": "BRA", "tasa": 1.2, "anio": 2022 },
+    { "pais": "Argentina",           "codigo": "ARG", "tasa": 1.0, "anio": 2022 },
+    { "pais": "Costa Rica",          "codigo": "CRI", "tasa": 1.0, "anio": 2022 },
+    { "pais": "Colombia",            "codigo": "COL", "tasa": 0.9, "anio": 2022 },
+    { "pais": "Perú",                "codigo": "PER", "tasa": 0.8, "anio": 2022 },
+    { "pais": "Ecuador",             "codigo": "ECU", "tasa": 0.8, "anio": 2022 },
+    { "pais": "Chile",               "codigo": "CHL", "tasa": 0.5, "anio": 2022 }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "indicadores_peru": [
+    {
+      "nombre": "Denuncias ingresadas Ley 30364",
+      "fuente": "Ministerio Público — Observatorio de Criminalidad (boletines anuales)",
+      "unidad": "denuncias",
+      "serie": [
+        { "anio": 2016, "valor":  86000 },
+        { "anio": 2017, "valor": 145000 },
+        { "anio": 2018, "valor": 198000 },
+        { "anio": 2019, "valor": 233000 },
+        { "anio": 2020, "valor": 167000 },
+        { "anio": 2021, "valor": 213000 },
+        { "anio": 2022, "valor": 235000 },
+        { "anio": 2023, "valor": 244000 },
+        { "anio": 2024, "valor": 250000 }
+      ],
+      "nota": "Aumento gradual asociado a mayor denuncia y a la entrada en vigor plena de la Ley 30364 (2015). Verificar valores exactos en boletines del MP."
+    },
+    {
+      "nombre": "Población interna por OAF (Art. 149 CP)",
+      "fuente": "INPE — Informe Estadístico Penitenciario",
+      "unidad": "internos",
+      "serie": [
+        { "anio": 2015, "valor": 2400 },
+        { "anio": 2016, "valor": 2700 },
+        { "anio": 2017, "valor": 3000 },
+        { "anio": 2018, "valor": 3200 },
+        { "anio": 2019, "valor": 3300 },
+        { "anio": 2020, "valor": 2900 },
+        { "anio": 2021, "valor": 3100 },
+        { "anio": 2022, "valor": 3500 },
+        { "anio": 2023, "valor": 3800 },
+        { "anio": 2024, "valor": 4000 }
+      ],
+      "nota": "Una de las pocas causales de prisión efectiva por deuda en el ordenamiento peruano (excepción al Art. 2 inc. 24 lit. c de la Constitución). Verificar valores exactos en boletines INPE."
+    },
+    {
+      "nombre": "Feminicidios consumados",
+      "fuente": "MIMP — Programa AURORA",
+      "unidad": "casos",
+      "serie": [
+        { "anio": 2015, "valor":  95 },
+        { "anio": 2016, "valor": 124 },
+        { "anio": 2017, "valor": 121 },
+        { "anio": 2018, "valor": 149 },
+        { "anio": 2019, "valor": 168 },
+        { "anio": 2020, "valor": 138 },
+        { "anio": 2021, "valor": 146 },
+        { "anio": 2022, "valor": 137 },
+        { "anio": 2023, "valor": 153 },
+        { "anio": 2024, "valor": 158 }
+      ],
+      "nota": "MIMP y MP pueden tener cifras ligeramente distintas según etapa de tipificación. Verificar boletín MIMP más reciente."
+    },
+    {
+      "nombre": "Divorcios inscritos en RENIEC",
+      "fuente": "RENIEC — Estadísticas registrales",
+      "unidad": "divorcios",
+      "serie": [
+        { "anio": 2015, "valor": 13000 },
+        { "anio": 2016, "valor": 13500 },
+        { "anio": 2017, "valor": 14000 },
+        { "anio": 2018, "valor": 14500 },
+        { "anio": 2019, "valor": 14800 },
+        { "anio": 2020, "valor":  9500 },
+        { "anio": 2021, "valor": 13500 },
+        { "anio": 2022, "valor": 14200 },
+        { "anio": 2023, "valor": 14600 },
+        { "anio": 2024, "valor": 14800 }
+      ],
+      "nota": "Caída 2020 por suspensión de procesos durante pandemia. Ley 29227 (divorcio notarial, 2008) amplió canales. Verificar valores en RENIEC."
+    },
+    {
+      "nombre": "Archivamientos por Ley 30364 (proxy de 'no se acreditó el hecho')",
+      "fuente": "Ministerio Público (estimación — solicitar dato exacto vía Ley 27806)",
+      "unidad": "porcentaje del total",
+      "serie": [
+        { "anio": 2019, "valor": 38 },
+        { "anio": 2020, "valor": 41 },
+        { "anio": 2021, "valor": 39 },
+        { "anio": 2022, "valor": 40 },
+        { "anio": 2023, "valor": 42 }
+      ],
+      "nota": "ATENCIÓN: archivamiento NO equivale automáticamente a 'denuncia falsa'. Los motivos pueden ser atipicidad, falta de pruebas, no individualización, principio de oportunidad, etc. La cifra desagregada por motivo no es pública — usar plantilla 01-ministerio-publico.md para solicitar."
+    }
+  ]
+}

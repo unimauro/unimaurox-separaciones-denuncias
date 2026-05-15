@@ -1,0 +1,23 @@
+{
+  "indicador": "Tasa de homicidio intencional por 100,000 hombres",
+  "fuente": "UNODC — Global Study on Homicide",
+  "anio_referencia": "2021-2022 (verificar dataunodc.un.org)",
+  "advertencia": "Cifras referenciales. Países con conflicto activo o registro deficiente pueden estar sub-representados.",
+  "paises": [
+    { "pais": "Honduras",            "codigo": "HND", "tasa": 60.0, "anio": 2022 },
+    { "pais": "Venezuela",           "codigo": "VEN", "tasa": 55.0, "anio": 2021 },
+    { "pais": "Brasil",              "codigo": "BRA", "tasa": 50.0, "anio": 2022 },
+    { "pais": "Colombia",            "codigo": "COL", "tasa": 45.0, "anio": 2022 },
+    { "pais": "México",              "codigo": "MEX", "tasa": 42.0, "anio": 2022 },
+    { "pais": "El Salvador",         "codigo": "SLV", "tasa": 14.0, "anio": 2022 },
+    { "pais": "Ecuador",             "codigo": "ECU", "tasa": 45.0, "anio": 2023 },
+    { "pais": "Costa Rica",          "codigo": "CRI", "tasa": 21.0, "anio": 2022 },
+    { "pais": "República Dominicana","codigo": "DOM", "tasa": 19.0, "anio": 2022 },
+    { "pais": "Paraguay",            "codigo": "PRY", "tasa": 14.0, "anio": 2022 },
+    { "pais": "Uruguay",             "codigo": "URY", "tasa": 12.0, "anio": 2022 },
+    { "pais": "Bolivia",             "codigo": "BOL", "tasa": 11.0, "anio": 2022 },
+    { "pais": "Perú",                "codigo": "PER", "tasa":  9.0, "anio": 2022 },
+    { "pais": "Argentina",           "codigo": "ARG", "tasa":  8.5, "anio": 2022 },
+    { "pais": "Chile",               "codigo": "CHL", "tasa":  7.5, "anio": 2022 }
+  ]
+}
