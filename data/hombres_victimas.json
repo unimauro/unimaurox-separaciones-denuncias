@@ -1,0 +1,91 @@
+{
+  "indicador": "Violencia hacia hombres en pareja — fuentes y datos",
+  "advertencia_global": "El debate suele mezclar prevalencia (cuántos sufren), severidad (qué tan grave), y consecuencias (lesiones, miedo, muerte). En prevalencia bruta las cifras se acercan; en severidad y letalidad la asimetría crece. Este panel separa los tres.",
+  "prevalencia_global_nisvs": {
+    "indicador": "Prevalencia de violencia de pareja a lo largo de la vida (lifetime IPV)",
+    "fuente": "CDC USA — NISVS (National Intimate Partner and Sexual Violence Survey)",
+    "url": "https://www.cdc.gov/violenceprevention/datasources/nisvs/",
+    "calidad": "oficial",
+    "anio_referencia": "2016/2017 (último informe completo publicado)",
+    "valores": [
+      { "categoria": "Cualquier IPV (lifetime)",            "mujeres": 47.3, "hombres": 44.2 },
+      { "categoria": "IPV severa (lifetime)",               "mujeres": 26.4, "hombres": 14.9 },
+      { "categoria": "Violencia sexual por pareja",         "mujeres": 16.4, "hombres":  6.0 },
+      { "categoria": "Stalking por pareja",                 "mujeres": 10.4, "hombres":  2.2 },
+      { "categoria": "Agresión psicológica",                "mujeres": 47.1, "hombres": 47.3 }
+    ],
+    "nota": "La prevalencia bruta de IPV en hombres y mujeres es similar. La asimetría aparece en severidad, violencia sexual y stalking."
+  },
+  "ons_uk": {
+    "indicador": "Violencia doméstica en últimos 12 meses",
+    "fuente": "ONS UK — Crime Survey for England and Wales",
+    "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/bulletins/domesticabuseinenglandandwalesoverview/november2023",
+    "calidad": "oficial",
+    "anio_referencia": "Año encuesta 2023",
+    "valores": [
+      { "categoria": "Cualquier abuso doméstico", "mujeres": 7.3, "hombres": 6.1 },
+      { "categoria": "Por pareja actual o ex",    "mujeres": 4.9, "hombres": 2.9 }
+    ],
+    "nota": "ONS publica cifras de hombres víctimas con metodología estable desde 2004."
+  },
+  "abs_australia": {
+    "indicador": "Violencia por pareja desde los 15 años",
+    "fuente": "ABS Australia — Personal Safety Survey 2021-22",
+    "url": "https://www.abs.gov.au/statistics/people/crime-and-justice/personal-safety-australia/latest-release",
+    "calidad": "oficial",
+    "anio_referencia": "2021-2022",
+    "valores": [
+      { "categoria": "Violencia física por pareja", "mujeres": 23.0, "hombres":  7.3 },
+      { "categoria": "Violencia emocional",         "mujeres": 23.0, "hombres": 14.0 },
+      { "categoria": "Abuso económico",             "mujeres": 16.0, "hombres":  7.8 }
+    ],
+    "nota": "ABS captura abuso emocional y económico de forma sistemática en ambos sexos."
+  },
+  "asimetria_lesiones_archer": {
+    "indicador": "Meta-análisis Archer (2000) — porcentaje del sexo que sufrió lesiones físicas en agresión por pareja",
+    "fuente": "Archer J. (2000). Sex differences in aggression between heterosexual partners: a meta-analytic review. Psychological Bulletin 126(5).",
+    "url": "https://doi.org/10.1037/0033-2909.126.5.651",
+    "calidad": "estimacion",
+    "anio_referencia": "Publicado 2000, cubre estudios anteriores",
+    "valores": [
+      { "categoria": "Sufrieron lesión visible",  "mujeres": 65, "hombres": 35 },
+      { "categoria": "Requirieron atención médica","mujeres": 62, "hombres": 38 }
+    ],
+    "nota": "Misma prevalencia bruta de agresión física menor en ambos sexos, pero las mujeres sufren consecuencias físicas mayores. Cita más usada para discutir la diferencia entre prevalencia y severidad."
+  },
+  "peru_cem": {
+    "indicador": "Personas atendidas en Centros Emergencia Mujer (CEM)",
+    "fuente": "MIMP — Programa AURORA",
+    "url": "https://www.gob.pe/mimp",
+    "calidad": "oficial",
+    "anio_referencia": "2023",
+    "valores": [
+      { "categoria": "% mujeres atendidas", "porcentaje": 88 },
+      { "categoria": "% varones atendidos", "porcentaje": 12 }
+    ],
+    "nota": "Los CEM atienden a hombres víctimas de violencia familiar (Ley 30364 incluye 'integrantes del grupo familiar', no solo mujeres). La proporción ha sido relativamente estable en los últimos años."
+  },
+  "espana_violencia_domestica": {
+    "indicador": "Denuncias por violencia doméstica intrafamiliar (NO violencia de género)",
+    "fuente": "CGPJ — Observatorio contra la Violencia Doméstica y de Género",
+    "url": "https://www.poderjudicial.es/cgpj/es/Temas/Estadistica-Judicial/",
+    "calidad": "oficial",
+    "anio_referencia": "2023",
+    "valores": [
+      { "categoria": "Hombre víctima en violencia doméstica",    "porcentaje": 18 },
+      { "categoria": "Mujer víctima en violencia doméstica",     "porcentaje": 75 },
+      { "categoria": "Menores u otros familiares",               "porcentaje":  7 }
+    ],
+    "nota": "España separa estadística de 'violencia de género' (LO 1/2004, solo hombre→mujer en pareja) de 'violencia doméstica' (intrafamiliar mixta). Los hombres víctimas aparecen sobre todo en la segunda categoría, que incluye padre-hijo, hermanos, expareja masculina, etc. — no solo pareja."
+  },
+  "lo_que_no_existe": {
+    "titulo": "Lo que NO se mide sistemáticamente",
+    "puntos": [
+      "Violencia psicológica contra hombres en pareja como categoría registral propia en Latam (España solo en violencia doméstica genérica; Argentina y Brasil residual).",
+      "Violencia económica/patrimonial contra hombres en Latam.",
+      "Coerción por procesos judiciales o por uso de los hijos.",
+      "Suicidio masculino asociado a separación, denuncia o proceso de tenencia — la literatura epidemiológica lo asocia (Kposowa 2000: hombres divorciados 2.4× riesgo de suicidio) pero el registro causal específico no existe en ninguna fuente oficial latinoamericana."
+    ],
+    "como_pedirlo": "Las plantillas 01 (MP), 02 (INPE), 03 (PJ), 04 (MIMP) y 06 (Defensoría) en este repo incluyen explícitamente la solicitud de estos indicadores para varones víctimas."
+  }
+}

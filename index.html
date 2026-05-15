@@ -21,8 +21,12 @@
 
 <main class="container py-4">
 
+  <div class="kpi-strip" id="kpi-strip">
+    <!-- Inyectado por JS -->
+  </div>
+
   <div class="alert alert-warning small mb-4" role="alert">
-    <strong>Aviso metodológico.</strong> Los datos cargados provienen de CEPAL, UNODC, OMS, MP, MIMP, INPE y RENIEC, y son referenciales para visualización. Verifique los valores contra la fuente original antes de citar. Para indicadores no publicados (motivos específicos de archivamiento, costos económicos, salud mental en proceso) este repo incluye <a href="plantillas/">plantillas de solicitud Ley 27806</a>.
+    <strong>Aviso metodológico.</strong> Los datos provienen de CEPAL, UNODC, OMS, CDC NISVS, ONS, ABS, CGPJ, MP, MIMP, INPE y RENIEC. Cifras referenciales: verificar contra la fuente original antes de citar. Para indicadores no publicados (motivos específicos de archivamiento, costos económicos, salud mental en proceso, violencia hacia hombres en Latam) este repo incluye <a href="plantillas/">plantillas de solicitud Ley 27806</a>.
   </div>
 
   <ul class="nav nav-tabs mb-4" id="mainTabs" role="tablist">
@@ -34,6 +38,9 @@
     </li>
     <li class="nav-item" role="presentation">
       <button class="nav-link" id="tab-separacion" data-bs-toggle="tab" data-bs-target="#panel-separacion" type="button">Violencia en separación</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="tab-hombres" data-bs-toggle="tab" data-bs-target="#panel-hombres" type="button">Hombres víctimas</button>
     </li>
     <li class="nav-item" role="presentation">
       <button class="nav-link" id="tab-legal" data-bs-toggle="tab" data-bs-target="#panel-legal" type="button">Marco legal comparado</button>
@@ -50,12 +57,14 @@
 
     <!-- PANEL REGIONAL -->
     <div class="tab-pane fade show active" id="panel-regional" role="tabpanel">
+      <span class="section-badge regional">Regional</span>
       <div class="row g-4">
         <div class="col-lg-6">
           <div class="card shadow-sm h-100">
             <div class="card-body">
+              <span class="source-banner oficial">Fuente oficial</span>
               <h5 class="card-title">Tasa de feminicidio por 100 mil mujeres</h5>
-              <p class="text-muted small mb-1">Fuente: CEPAL — Observatorio de Igualdad de Género</p>
+              <p class="text-muted small mb-1">CEPAL — Observatorio de Igualdad de Género</p>
               <canvas id="chart-feminicidios"></canvas>
             </div>
           </div>
@@ -64,8 +73,9 @@
         <div class="col-lg-6">
           <div class="card shadow-sm h-100">
             <div class="card-body">
+              <span class="source-banner oficial">Fuente oficial</span>
               <h5 class="card-title">Tasa de homicidio de hombres por 100 mil</h5>
-              <p class="text-muted small mb-1">Fuente: UNODC — Global Study on Homicide</p>
+              <p class="text-muted small mb-1">UNODC — Global Study on Homicide</p>
               <canvas id="chart-homicidios"></canvas>
             </div>
           </div>
@@ -74,8 +84,9 @@
         <div class="col-lg-6">
           <div class="card shadow-sm h-100">
             <div class="card-body">
+              <span class="source-banner oficial">Fuente oficial</span>
               <h5 class="card-title">Tasa de divorcios por 1,000 habitantes</h5>
-              <p class="text-muted small mb-1">Fuente: UN Demographic Yearbook + institutos nacionales</p>
+              <p class="text-muted small mb-1">UN Demographic Yearbook + institutos nacionales</p>
               <canvas id="chart-divorcios"></canvas>
             </div>
           </div>
@@ -84,8 +95,9 @@
         <div class="col-lg-6">
           <div class="card shadow-sm h-100">
             <div class="card-body">
+              <span class="source-banner oficial">Fuente oficial</span>
               <h5 class="card-title">Tasa de suicidio por 100 mil — hombres vs mujeres</h5>
-              <p class="text-muted small mb-1">Fuente: OMS — Global Health Observatory</p>
+              <p class="text-muted small mb-1">OMS — Global Health Observatory</p>
               <canvas id="chart-suicidios"></canvas>
             </div>
           </div>
@@ -99,12 +111,14 @@
 
     <!-- PANEL PERÚ -->
     <div class="tab-pane fade" id="panel-peru" role="tabpanel">
+      <span class="section-badge peru">Perú</span>
       <div class="row g-4">
         <div class="col-lg-6">
           <div class="card shadow-sm">
             <div class="card-body">
+              <span class="source-banner oficial">Fuente oficial</span>
               <h5 class="card-title">Denuncias por Ley 30364</h5>
-              <p class="text-muted small mb-1">Fuente: Ministerio Público — Observatorio de Criminalidad</p>
+              <p class="text-muted small mb-1">Ministerio Público — Observatorio de Criminalidad</p>
               <canvas id="chart-denuncias"></canvas>
             </div>
           </div>
@@ -112,8 +126,9 @@
         <div class="col-lg-6">
           <div class="card shadow-sm">
             <div class="card-body">
+              <span class="source-banner oficial">Fuente oficial</span>
               <h5 class="card-title">Población interna por OAF (Art. 149 CP)</h5>
-              <p class="text-muted small mb-1">Fuente: INPE</p>
+              <p class="text-muted small mb-1">INPE — Informe Estadístico Penitenciario</p>
               <canvas id="chart-oaf"></canvas>
             </div>
           </div>
@@ -121,8 +136,9 @@
         <div class="col-lg-6">
           <div class="card shadow-sm">
             <div class="card-body">
+              <span class="source-banner oficial">Fuente oficial</span>
               <h5 class="card-title">Feminicidios consumados</h5>
-              <p class="text-muted small mb-1">Fuente: MIMP — Programa AURORA</p>
+              <p class="text-muted small mb-1">MIMP — Programa AURORA</p>
               <canvas id="chart-feminicidios-pe"></canvas>
             </div>
           </div>
@@ -130,8 +146,9 @@
         <div class="col-lg-6">
           <div class="card shadow-sm">
             <div class="card-body">
+              <span class="source-banner oficial">Fuente oficial</span>
               <h5 class="card-title">Divorcios inscritos</h5>
-              <p class="text-muted small mb-1">Fuente: RENIEC</p>
+              <p class="text-muted small mb-1">RENIEC — Estadísticas registrales</p>
               <canvas id="chart-divorcios-pe"></canvas>
             </div>
           </div>
@@ -139,6 +156,7 @@
         <div class="col-12">
           <div class="card shadow-sm">
             <div class="card-body">
+              <span class="source-banner estimacion">Estimación</span>
               <h5 class="card-title">Archivamientos sobre total de denuncias por Ley 30364</h5>
               <p class="text-muted small mb-1">Estimación. El motivo específico del archivamiento (atipicidad, falta de pruebas, inexistencia del hecho, principio de oportunidad) no es público — solicitarlo vía <a href="plantillas/01-ministerio-publico.md">Plantilla 01</a>.</p>
               <canvas id="chart-archivamientos"></canvas>
@@ -153,6 +171,7 @@
 
     <!-- PANEL VIOLENCIA EN SEPARACIÓN -->
     <div class="tab-pane fade" id="panel-separacion" role="tabpanel">
+      <span class="section-badge separacion">Separación</span>
 
       <div class="alert alert-info small mb-4">
         <strong>Sobre esta pestaña.</strong> Comparativo entre <strong>España</strong>, <strong>USA</strong>, <strong>Argentina</strong> y <strong>Brasil</strong> sobre violencia contra la pareja/expareja durante o después de la separación. España (CGPJ) y Argentina (OVD-CABA) son los que mejor desagregan el contexto de no-convivencia. Las definiciones legales de cada tipo de violencia difieren — la matriz inferior lo aclara.
@@ -162,6 +181,7 @@
         <div class="col-lg-6">
           <div class="card shadow-sm h-100">
             <div class="card-body">
+              <span class="source-banner estimacion">Mixto / referencial</span>
               <h5 class="card-title">% de denuncias en contexto de separación</h5>
               <p class="text-muted small mb-1">Víctima ya no convivía con el agresor (expareja, excónyuge, separados de hecho). Aproximado — definiciones difieren entre países.</p>
               <canvas id="chart-separacion-pct"></canvas>
@@ -172,6 +192,7 @@
         <div class="col-lg-6">
           <div class="card shadow-sm h-100">
             <div class="card-body">
+              <span class="source-banner oficial">Fuente oficial</span>
               <h5 class="card-title">Distribución por tipo de violencia — Argentina (RUCVM 2022)</h5>
               <p class="text-muted small mb-1">Una víctima puede reportar varios tipos; los porcentajes no suman 100%. Argentina es de los pocos países que registra económica y simbólica de forma sistemática.</p>
               <canvas id="chart-tipos-argentina"></canvas>
@@ -235,10 +256,111 @@
       </div>
     </div>
 
+    <!-- PANEL HOMBRES VÍCTIMAS -->
+    <div class="tab-pane fade" id="panel-hombres" role="tabpanel">
+      <span class="section-badge hombres">Hombres</span>
+
+      <div class="alert alert-info small mb-4">
+        <strong>Tres dimensiones que el debate público suele mezclar y aquí se separan: prevalencia</strong> (cuántas personas sufren violencia), <strong>severidad</strong> (qué tan grave, con lesión, miedo, control coercitivo), y <strong>consecuencias</strong> (atención médica, muerte). En prevalencia bruta de IPV las cifras hombre/mujer se acercan; en severidad, lesión y letalidad la asimetría crece. En Latam la captura sistemática de hombres víctimas es residual — la mejor data viene de USA, UK y Australia.
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-lg-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <span class="source-banner oficial">Encuesta oficial</span>
+              <h5 class="card-title">USA — Prevalencia IPV a lo largo de la vida (NISVS)</h5>
+              <p class="text-muted small mb-1">CDC — National Intimate Partner and Sexual Violence Survey</p>
+              <canvas id="chart-nisvs"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <span class="source-banner oficial">Encuesta oficial</span>
+              <h5 class="card-title">Reino Unido — Abuso doméstico últimos 12 meses</h5>
+              <p class="text-muted small mb-1">ONS — Crime Survey for England and Wales 2023</p>
+              <canvas id="chart-ons"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <span class="source-banner oficial">Encuesta oficial</span>
+              <h5 class="card-title">Australia — Violencia por pareja desde los 15 años</h5>
+              <p class="text-muted small mb-1">ABS — Personal Safety Survey 2021-22</p>
+              <canvas id="chart-abs"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <span class="source-banner estimacion">Meta-análisis académico</span>
+              <h5 class="card-title">Asimetría en consecuencias físicas</h5>
+              <p class="text-muted small mb-1">Archer J. (2000) — Meta-análisis en <em>Psychological Bulletin</em></p>
+              <canvas id="chart-archer"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <span class="source-banner oficial">Fuente oficial</span>
+              <h5 class="card-title">Perú — Atenciones en Centros Emergencia Mujer</h5>
+              <p class="text-muted small mb-1">MIMP — Programa AURORA, 2023</p>
+              <div class="table-responsive">
+                <table class="table table-sm table-bordered" id="tabla-peru-cem">
+                  <thead class="table-dark"><tr><th>Categoría</th><th>%</th></tr></thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              <p class="small text-muted mb-0">Los CEM atienden a hombres víctimas de violencia familiar — Ley 30364 incluye "integrantes del grupo familiar".</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card shadow-sm h-100">
+            <div class="card-body">
+              <span class="source-banner oficial">Fuente oficial</span>
+              <h5 class="card-title">España — Víctimas en violencia doméstica</h5>
+              <p class="text-muted small mb-1">CGPJ — Categoría "violencia doméstica" (NO violencia de género)</p>
+              <div class="table-responsive">
+                <table class="table table-sm table-bordered" id="tabla-espana-cgpj">
+                  <thead class="table-dark"><tr><th>Tipo víctima</th><th>%</th></tr></thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+              <p class="small text-muted mb-0">España separa "violencia de género" (LO 1/2004, hombre→mujer en pareja) de "violencia doméstica" (intrafamiliar mixta).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="alert alert-warning small mb-0">
+            <strong>Lo que NO se mide sistemáticamente</strong>
+            <ul class="mb-0 mt-2" id="lista-no-medido"></ul>
+            <p class="mt-2 mb-0"><strong>Cómo pedirlo:</strong> las plantillas 01 (MP), 02 (INPE), 03 (PJ), 04 (MIMP) y 06 (Defensoría) en este repo solicitan estos indicadores para varones víctimas.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <!-- PANEL MARCO LEGAL -->
     <div class="tab-pane fade" id="panel-legal" role="tabpanel">
+      <span class="section-badge legal">Legal</span>
       <div class="card shadow-sm">
         <div class="card-body">
+          <span class="source-banner estimacion">Compilación referencial</span>
           <h5 class="card-title">Marco legal comparado</h5>
           <p class="text-muted small">Tabla referencial. Cada celda representa un esquema legal general; la aplicación práctica varía. Use como punto de partida, no como cita literal.</p>
           <div class="table-responsive">
@@ -263,6 +385,7 @@
 
     <!-- PANEL DATOS PENDIENTES -->
     <div class="tab-pane fade" id="panel-pendiente" role="tabpanel">
+      <span class="section-badge pendiente">Pendientes</span>
       <div class="card shadow-sm">
         <div class="card-body">
           <h5 class="card-title">Indicadores que no están publicados y deben solicitarse</h5>
@@ -329,6 +452,7 @@
 
     <!-- PANEL METODOLOGÍA -->
     <div class="tab-pane fade" id="panel-metodo" role="tabpanel">
+      <span class="section-badge metodo">Metodología</span>
       <div class="card shadow-sm">
         <div class="card-body">
           <h5 class="card-title">Fuentes y advertencias metodológicas</h5>

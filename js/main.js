@@ -36,7 +36,8 @@ async function cargarDatos() {
     "data/peru_temporal.json",
     "data/marco_legal.json",
     "data/sources.json",
-    "data/violencia_separacion_comparado.json"
+    "data/violencia_separacion_comparado.json",
+    "data/hombres_victimas.json"
   ];
   const resp = await Promise.all(archivos.map(a => fetch(a).then(r => r.json())));
   return {
@@ -47,8 +48,78 @@ async function cargarDatos() {
     peruTemporal: resp[4],
     marcoLegal:   resp[5],
     fuentes:      resp[6],
-    separacion:   resp[7]
+    separacion:   resp[7],
+    hombres:      resp[8]
   };
+}
+
+// Render del strip de KPIs.
+function renderKpiStrip(data) {
+  const cont = document.getElementById("kpi-strip");
+  if (!cont) return;
+
+  const denunciasPeru = data.peruTemporal.indicadores_peru
+    .find(i => i.nombre.startsWith("Denuncias")).serie.slice(-1)[0];
+  const oafPeru = data.peruTemporal.indicadores_peru
+    .find(i => i.nombre.startsWith("Población interna")).serie.slice(-1)[0];
+  const femPeru = data.peruTemporal.indicadores_peru
+    .find(i => i.nombre.startsWith("Feminicidios")).serie.slice(-1)[0];
+
+  const femMaxPais = [...data.feminicidios.paises].sort((a,b)=>b.tasa-a.tasa)[0];
+  const homMaxPais = [...data.homicidios.paises].sort((a,b)=>b.tasa-a.tasa)[0];
+
+  const cards = [
+    {
+      label: "Denuncias Ley 30364",
+      value: denunciasPeru.valor.toLocaleString("es-PE"),
+      unit:  "Perú " + denunciasPeru.anio,
+      sub:   "Ministerio Público",
+      accent: "rojo"
+    },
+    {
+      label: "Presos por OAF",
+      value: oafPeru.valor.toLocaleString("es-PE"),
+      unit:  "Perú " + oafPeru.anio,
+      sub:   "INPE — Art. 149 CP",
+      accent: "ambar"
+    },
+    {
+      label: "Feminicidios consumados",
+      value: femPeru.valor,
+      unit:  "Perú " + femPeru.anio,
+      sub:   "MIMP — Programa AURORA",
+      accent: "morado"
+    },
+    {
+      label: "Tasa feminicidio (más alta Latam)",
+      value: femMaxPais.tasa.toFixed(1),
+      unit:  "por 100k mujeres",
+      sub:   femMaxPais.pais + " — CEPAL " + femMaxPais.anio,
+      accent: "rosa"
+    },
+    {
+      label: "Tasa homicidios hombres (más alta)",
+      value: homMaxPais.tasa.toFixed(0),
+      unit:  "por 100k",
+      sub:   homMaxPais.pais + " — UNODC " + homMaxPais.anio,
+      accent: ""
+    },
+    {
+      label: "Países en el comparado",
+      value: data.feminicidios.paises.length,
+      unit:  "Latam",
+      sub:   "CEPAL OIG cobertura",
+      accent: "verde"
+    }
+  ];
+
+  cont.innerHTML = cards.map(c => `
+    <div class="kpi-card ${c.accent ? 'accent-' + c.accent : ''}">
+      <div class="kpi-label">${c.label}</div>
+      <div class="kpi-value">${c.value}<span class="kpi-unit">${c.unit}</span></div>
+      <div class="kpi-sub">${c.sub}</div>
+    </div>
+  `).join("");
 }
 
 // Render del panel regional.
@@ -187,6 +258,75 @@ function renderPanelSeparacion(data) {
   }
 }
 
+// Render del panel "Hombres víctimas".
+function renderPanelHombres(data) {
+  const h = data.hombres;
+
+  // Helper para charts comparativos hombre/mujer.
+  function renderCompMH(canvasId, valores, etiquetaX = "%") {
+    const ctx = document.getElementById(canvasId);
+    if (!ctx) return;
+    new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: valores.map(v => v.categoria),
+        datasets: [
+          {
+            label: "Mujeres",
+            data: valores.map(v => v.mujeres),
+            backgroundColor: COLORS.morado
+          },
+          {
+            label: "Hombres",
+            data: valores.map(v => v.hombres),
+            backgroundColor: COLORS.azul
+          }
+        ]
+      },
+      options: {
+        indexAxis: "y",
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: "top" },
+          tooltip: { callbacks: { label: c => `${c.dataset.label}: ${c.parsed.x}${etiquetaX}` } }
+        },
+        scales: {
+          x: { beginAtZero: true, ticks: { callback: v => v + etiquetaX } },
+          y: { ticks: { font: { size: 10 } } }
+        }
+      }
+    });
+  }
+
+  renderCompMH("chart-nisvs",  h.prevalencia_global_nisvs.valores, "%");
+  renderCompMH("chart-ons",    h.ons_uk.valores, "%");
+  renderCompMH("chart-abs",    h.abs_australia.valores, "%");
+  renderCompMH("chart-archer", h.asimetria_lesiones_archer.valores, "%");
+
+  // Tabla Perú CEM.
+  const tbodyPe = document.querySelector("#tabla-peru-cem tbody");
+  if (tbodyPe) {
+    tbodyPe.innerHTML = h.peru_cem.valores.map(v =>
+      `<tr><td>${v.categoria}</td><td><strong>${v.porcentaje}%</strong></td></tr>`
+    ).join("");
+  }
+
+  // Tabla España CGPJ.
+  const tbodyEs = document.querySelector("#tabla-espana-cgpj tbody");
+  if (tbodyEs) {
+    tbodyEs.innerHTML = h.espana_violencia_domestica.valores.map(v =>
+      `<tr><td>${v.categoria}</td><td><strong>${v.porcentaje}%</strong></td></tr>`
+    ).join("");
+  }
+
+  // Lista "lo que no se mide".
+  const lista = document.getElementById("lista-no-medido");
+  if (lista) {
+    lista.innerHTML = h.lo_que_no_existe.puntos.map(p => `<li>${p}</li>`).join("");
+  }
+}
+
 // Render de la tabla de marco legal.
 function renderTablaLegal(data) {
   const tbody = document.querySelector("#tabla-legal tbody");
@@ -233,9 +373,11 @@ function renderFuentes(data) {
     inyectarLinksRepo();
     reescribirLinksMarkdown();
     const data = await cargarDatos();
+    renderKpiStrip(data);
     renderPanelRegional(data);
     renderPanelPeru(data);
     renderPanelSeparacion(data);
+    renderPanelHombres(data);
     renderTablaLegal(data);
     renderFuentes(data);
   } catch (err) {
